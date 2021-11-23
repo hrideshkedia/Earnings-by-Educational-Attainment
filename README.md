@@ -34,6 +34,7 @@ The only columns that have data from 1960 onwards are: (i) overall labor force l
 The main question is: what is the best way to generate forecasts for median weekly earnings for each educational attainment level?
 
 ### Approach:
+
 We have at our disposal historical median weekly earnings data for each educational attainment level, and the labor force data for each educational attainment level, along with overall labor force data and the population percentage of persons with High School Graduation (HSG) and the population percentage of persons with a Bachelors or Higher Degree (BHD). 
 
 We will use two approaches to forecast the median weekly earnings data for each educational attainment level: (i) a model that uses only the historical median weekly earnings data for each educational attainment level (ii) a model that uses the historical and forecasted labor force data along with the median weekly earnings data for each educational attainment level. 
@@ -44,7 +45,8 @@ The idea behind the 2nd approach is that in addition to historical trends, earni
 
 We will present forecasts using both approaches.
 
-## Method:
+### Method:
+
 Since we want to forecast values of the median earnings and the labor force variables a decade into the future and not just one year into the future, we  will use Structural Time Series (STS) models from the Tensor Flow Probability package instead of other machine learning methods which require much more data to fit, and often involve errors that accumulate rapidly over time for future predictions. We will use [this fantastic example notebook from TensorFlow Probability](https://colab.research.google.com/github/tensorflow/probability/blob/main/tensorflow_probability/examples/jupyter_notebooks/Structural_Time_Series_Modeling_Case_Studies_Atmospheric_CO2_and_Electricity_Demand.ipynb#scrollTo=ULm_Z8Oe0Lhd) as our guide.
 
 (i) In the first approach, we will build an STS model with a semi-local linear trend (to keep the variance bounded), and a seasonal component to forecast the values for the years 2021-2030, where we use a periodogram (a Fourier Transform really) to determine the durations and number of seasons. 
@@ -53,7 +55,8 @@ Since we want to forecast values of the median earnings and the labor force vari
 For this, we need to forecast the labor force data for each educational attainment level. To do this we use both the past historical data for that educational level and labor force variable and regressors calculated from the overall data for that labor force variable by multiplying with the population percentages for high school (HSG) and bachelors (BHD) degrees. 
 
 
-### Results: 
+### Results:
+
 (i) Forecasts using only the historical median weekly earnings data for that educational attainment level:
 ![](https://github.com/hrideshkedia/Earnings-by-Educational-Attainment/blob/main/mwe_historical_forecast.png)
 where the mean of forecast distribution for each educational attainment level is shown in  dashed lines, and the shaded region around it denotes two standard deviations above and below the mean. 
