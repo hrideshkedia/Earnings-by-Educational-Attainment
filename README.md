@@ -1,4 +1,4 @@
-#### Earnings by Educational Attainment
+### *Earnings by Educational Attainment*
 
 ### Context
 
