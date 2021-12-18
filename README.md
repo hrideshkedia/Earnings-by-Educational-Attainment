@@ -64,6 +64,9 @@ where the mean of forecast distribution for each educational attainment level is
 (ii) Forecasts using the historical median weekly earnings data and labor force data and forecasts for that educational attainment level:
 ![](https://github.com/hrideshkedia/Earnings-by-Educational-Attainment/blob/main/mwe_lf_historical_data_forecast.png)
 
-While the variance of our forecasts differ between the two methods, both methods predict that median weekly earnings for persons with a Bachelors or Higher Degree will continue to rise, while the median weekly earnings for all other persons will stagnate over the next decade, at levels comparable to or lower than that in 1979, after adjusting for inflation. 
+We notice that the simpler model which takes into account only the historical median earnings data for each educational attainment level has a lower variance, while the more complex model which takes into account both the historical median earnings data and the labor force data has a higher variance. This is a classic demonstration of the bias-variance tradeoff. The simpler model has a higher bias and a lower variance, while the more complex model likely has a lower bias but a higher variance because of limited data availability. 
+
+
+Though the variance of our forecasts differ between the two methods, both methods predict that median weekly earnings for persons with a Bachelors or Higher Degree will continue to rise, while the median weekly earnings for all other persons will stagnate over the next decade, at levels comparable to or lower than that in 1979, after adjusting for inflation. 
 
 This suggests that urgent steps are needed to make college education accessible to all.
